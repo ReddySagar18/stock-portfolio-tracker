@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+.env
+database.db
+
+*.pyc
+
+stock-frontend/node_modules/
+stock-frontend/dist/
