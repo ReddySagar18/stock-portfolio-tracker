@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_cors import CORS
+import os
 
 from routes.user_routes import user_bp
 from routes.portfolio_routes import portfolio_bp
@@ -13,5 +14,7 @@ app.register_blueprint(user_bp)
 app.register_blueprint(portfolio_bp)
 app.register_blueprint(transaction_bp)
 
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)

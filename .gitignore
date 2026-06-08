@@ -7,3 +7,8 @@ database.db
 
 stock-frontend/node_modules/
 stock-frontend/dist/
+DB_HOST=ep-delicate-fire-ap6fsw70-pooler.c-7.us-east-1.aws.neon.tech
+DB_NAME=neondb
+DB_USER=neondb_owner
+DB_PASSWORD=npg_EWZy4GKFO3NM
+DB_PORT=5432
