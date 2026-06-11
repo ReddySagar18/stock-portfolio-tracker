@@ -13,9 +13,6 @@ CORS(app)
 app.register_blueprint(user_bp)
 app.register_blueprint(portfolio_bp)
 app.register_blueprint(transaction_bp)
-@user_bp.route('/login', methods=['POST'])
-def login():
-    data = request.get_json()
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
