@@ -13,6 +13,11 @@ CORS(app)
 app.register_blueprint(user_bp)
 app.register_blueprint(portfolio_bp)
 app.register_blueprint(transaction_bp)
+@app.route("/")
+def home():
+    return {
+        "message": "Stock Portfolio Tracker API is running successfully"
+    }
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
