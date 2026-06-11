@@ -14,8 +14,10 @@ def register_user(username, password):
             "message": "User already exists"
         }, 400
 
-    # 🔐 HASH PASSWORD
-    hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+    hashed_password = bcrypt.hashpw(
+        password.encode("utf-8"),
+        bcrypt.gensalt()
+    ).decode("utf-8")
 
     user_id = create_user(username, hashed_password)
 
@@ -29,6 +31,7 @@ def register_user(username, password):
         "user_id": user_id
     }, 201
 
+
 def login_user(username, password):
     user = get_user_by_username(username)
 
@@ -37,10 +40,10 @@ def login_user(username, password):
             "message": "User not found"
         }, 404
 
-    stored_password = bytes(user["password"])
+    stored_password = user["password"].encode("utf-8")
 
     if not bcrypt.checkpw(
-        password.encode('utf-8'),
+        password.encode("utf-8"),
         stored_password
     ):
         return {
