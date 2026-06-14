@@ -64,19 +64,19 @@ stock-portfolio-tracker/
 
 ### Login Page
 
-![Login](screenshots/login.png)
+![Login](screenshots/LOGIN.png)
 
 ### Registration Page
 
-![Register](screenshots/register.png)
+![Register](screenshots/REGISTER.png)
 
 ### Portfolio Page
 
-![Portfolio](screenshots/portfolio.png)
+![Portfolio](screenshots/PORTFOLIO.png)
 
 ### Dashboard Page
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/DASHBOARD.png)
 
 ## Learning Outcomes
 
