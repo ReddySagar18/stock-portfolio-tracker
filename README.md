@@ -1,17 +1,25 @@
 # Stock Portfolio Tracker
 
-A full-stack web application that enables users to manage and track their stock portfolio through a secure and intuitive interface.
+A full-stack web application that enables users to securely manage and track their stock portfolio. The application provides authentication, portfolio management, transaction tracking, and persistent data storage through PostgreSQL.
+
+## Live Demo
+
+**Frontend:** https://stock-portfolio-tracker-eqw9n8meo-reddysagar18s-projects.vercel.app/
+
+**Backend API:** https://stock-portfolio-tracker-sbl7.onrender.com
 
 ## Features
 
-* User Registration and Login
+* User Registration
+* User Login
 * JWT Authentication
 * Add Stocks to Portfolio
 * Update Stock Holdings
 * Delete Stocks from Portfolio
-* Track Portfolio Transactions
+* Portfolio Management
+* Transaction Tracking
 * PostgreSQL Database Integration
-* Secure Backend API
+* Secure REST API
 
 ## Tech Stack
 
@@ -32,8 +40,8 @@ A full-stack web application that enables users to manage and track their stock 
 
 ### Deployment
 
-* Vercel (Frontend)
-* Render (Backend)
+* Vercel
+* Render
 
 ## Project Structure
 
@@ -62,33 +70,37 @@ stock-portfolio-tracker/
 
 ![Register](screenshots/register.png)
 
-### Portfolio Dashboard
+### Portfolio Page
+
+![Portfolio](screenshots/portfolio.png)
+
+### Dashboard Page
 
 ![Dashboard](screenshots/dashboard.png)
 
-### Transaction History
-
-![Transactions](screenshots/transactions.png)
-
 ## Learning Outcomes
 
-Through this project, I gained practical experience in:
+This project helped me gain practical experience in:
 
+* Full-Stack Web Development
 * REST API Development
 * JWT Authentication
-* Database Design and Integration
-* Full-Stack Application Development
-* Frontend and Backend Deployment
-* Client-Server Architecture
+* PostgreSQL Database Integration
+* Backend Architecture using Flask
+* Frontend Development using React
+* Deployment using Vercel and Render
 * Git and GitHub Workflow
 
 ## Future Improvements
 
 * Real-Time Stock Price Integration
-* Portfolio Analytics Dashboard
+* Portfolio Performance Analytics
 * Profit and Loss Tracking
-* Mobile Application Support
+* Stock Search and Filtering
+* Mobile Application Version
 
 ## Author
 
-Sagar
+**Sagar**
+
+Aspiring Software Engineer passionate about Full-Stack Development, Python, and building practical applications.
