@@ -1,4 +1,4 @@
-const BASE_URL = "http://127.0.0.1:5000";
+const BASE_URL = "https://stock-portfolio-tracker-4.onrender.com";
 
 const getToken = () => {
   return localStorage.getItem("token");
