@@ -5,7 +5,7 @@ function Navbar({ logoutUser }) {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        background: "#1e293b",
+        background: "#2a12c2",
         color: "white",
         padding: "15px 25px",
         borderRadius: "10px",
