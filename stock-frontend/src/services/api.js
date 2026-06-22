@@ -12,7 +12,8 @@ export async function registerUser(username, password) {
     }),
   });
 
-  return await response.json();
+  const data = await response.json();
+  return data;
 }
 
 export async function loginUser(username, password) {
@@ -27,5 +28,6 @@ export async function loginUser(username, password) {
     }),
   });
 
-  return await response.json();
+  const data = await response.json();
+  return data;
 }

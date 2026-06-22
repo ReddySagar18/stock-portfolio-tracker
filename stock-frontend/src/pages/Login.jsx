@@ -11,6 +11,7 @@ function Login() {
       password,
     });
   }
+    console.log("Button clicked");
 
   return (
     <div>
