@@ -9,7 +9,7 @@ function Transactions() {
       const token = localStorage.getItem("token");
 
       const response = await fetch(
-        "http://localhost:5000/transactions",
+        "`${API_BASE_URL}/transactions",
         {
           headers: {
             Authorization: `Bearer ${token}`,

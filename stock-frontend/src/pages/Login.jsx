@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Loader from "../components/Loader";
+import API_BASE_URL from "../services/api";
 function Auth() {
+  
   const [isLogin, setIsLogin] = useState(true);
   const [loading, setLoading] = useState(false);
   const [username, setUsername] = useState("");
@@ -14,11 +16,9 @@ function Auth() {
       alert("Fill all fields");
       return;
     }
-
-    const url = isLogin
-      ? "http://localhost:5000/login"
-      : "http://localhost:5000/register";
-
+const url = isLogin
+  ? `${API_BASE_URL}/login`
+  : `${API_BASE_URL}/register`;
     try {
        setLoading(true);
       const response = await fetch(url, {
