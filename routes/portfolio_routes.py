@@ -45,10 +45,18 @@ def update_portfolio(current_user_id):
 @portfolio_bp.route('/portfolio', methods=['DELETE'])
 @token_required
 def delete_portfolio(current_user_id):
+
     data = request.get_json()
 
-    stock_id = data.get('id')
+    stock_id = data.get("id")
+    sell_quantity = data.get("quantity")
+    sell_price = data.get("price")
 
-    response, status = remove_stock(current_user_id, stock_id)
+    response, status = remove_stock(
+        current_user_id,
+        stock_id,
+        sell_quantity,
+        sell_price
+    )
 
     return jsonify(response), status

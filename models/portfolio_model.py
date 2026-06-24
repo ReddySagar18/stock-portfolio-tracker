@@ -10,6 +10,7 @@ def get_portfolio_by_user(user_id):
         SELECT id, stock_name, quantity, buy_price
         FROM portfolio
         WHERE user_id = %s
+        ORDER BY stock_name
         """,
         (user_id,)
     )
@@ -30,6 +31,27 @@ def get_portfolio_by_user(user_id):
     return portfolio
 
 
+def get_stock_by_name(user_id, stock_name):
+    conn = get_db_connection()
+    cursor = get_dict_cursor(conn)
+
+    cursor.execute(
+        """
+        SELECT *
+        FROM portfolio
+        WHERE user_id = %s
+        AND UPPER(stock_name) = %s
+        """,
+        (user_id, stock_name.upper())
+    )
+
+    stock = cursor.fetchone()
+
+    conn.close()
+
+    return stock
+
+
 def add_stock(user_id, stock_name, quantity, buy_price):
     conn = get_db_connection()
     cursor = get_dict_cursor(conn)
@@ -41,7 +63,12 @@ def add_stock(user_id, stock_name, quantity, buy_price):
             (user_id, stock_name, quantity, buy_price)
             VALUES (%s, %s, %s, %s)
             """,
-            (user_id, stock_name, quantity, buy_price)
+            (
+                user_id,
+                stock_name.upper(),
+                quantity,
+                buy_price
+            )
         )
 
         conn.commit()
@@ -65,12 +92,17 @@ def update_stock(user_id, stock_id, quantity, buy_price):
         cursor.execute(
             """
             UPDATE portfolio
-            SET quantity = %s,
-                buy_price = %s
-            WHERE id = %s
-            AND user_id = %s
+            SET quantity=%s,
+                buy_price=%s
+            WHERE id=%s
+            AND user_id=%s
             """,
-            (quantity, buy_price, stock_id, user_id)
+            (
+                quantity,
+                buy_price,
+                stock_id,
+                user_id
+            )
         )
 
         rows = cursor.rowcount
@@ -96,10 +128,13 @@ def delete_stock(user_id, stock_id):
         cursor.execute(
             """
             DELETE FROM portfolio
-            WHERE id = %s
-            AND user_id = %s
+            WHERE id=%s
+            AND user_id=%s
             """,
-            (stock_id, user_id)
+            (
+                stock_id,
+                user_id
+            )
         )
 
         rows = cursor.rowcount
@@ -115,3 +150,22 @@ def delete_stock(user_id, stock_id):
 
     finally:
         conn.close()
+def get_stock_by_id(user_id, stock_id):
+    conn = get_db_connection()
+    cursor = get_dict_cursor(conn)
+
+    cursor.execute(
+        """
+        SELECT *
+        FROM portfolio
+        WHERE id = %s
+        AND user_id = %s
+        """,
+        (stock_id, user_id)
+    )
+
+    stock = cursor.fetchone()
+
+    conn.close()
+
+    return stock
